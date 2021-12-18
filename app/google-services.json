@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "230162589838",
+    "project_id": "sondagiovanny",
+    "storage_bucket": "sondagiovanny.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230162589838:android:e81622e100be105be101df",
+        "android_client_info": {
+          "package_name": "com.example.sondag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230162589838-ab2n7nr0qt1eoal8u9ojtusm0c5pdc58.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy9lnV5sFOGv8mxcYUg3rBRXmDmMje5oA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230162589838-ab2n7nr0qt1eoal8u9ojtusm0c5pdc58.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
