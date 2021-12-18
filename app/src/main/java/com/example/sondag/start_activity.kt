@@ -3,8 +3,13 @@ package com.example.sondag
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.firebase.firestore.FirebaseFirestore
 
 class start_activity : AppCompatActivity() {
+
+    var db= FirebaseFirestore.getInstance()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -15,4 +20,27 @@ class start_activity : AppCompatActivity() {
         val getOut = Intent(this,MainActivity::class.java)
         startActivity(getOut)
     }
+
+    fun toBringBD(view: android.view.View) {
+
+        var lista: ArrayList<String> = ArrayList()
+        db.collection("lista").whereGreaterThan("fecha", 2).get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    println("en la clase Datos: ${document.id} => ${document.data}")
+                    lista.add("${document.data}".toString())
+
+                }
+                var datos:Datos=Datos(lista)
+                println(datos.toBringDB())
+
+            }
+
+
+
+
+
+
+
+}
 }
