@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SondaG</string>
+    <string name="user">usuario</string>
+    <string name="password">contraseña</string>
+</resources>
