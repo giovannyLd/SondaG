@@ -10,6 +10,7 @@ class start_activity : AppCompatActivity() {
     var db= FirebaseFirestore.getInstance()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -22,13 +23,15 @@ class start_activity : AppCompatActivity() {
     }
 
     fun toBringBD(view: android.view.View) {
-
         var lista: ArrayList<String> = ArrayList()
+
+
         db.collection("lista").whereGreaterThan("fecha", 2).get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     println("en la clase Datos: ${document.id} => ${document.data}")
-                    lista.add("${document.data}".toString())
+//                    lista1.add("${document.data}".toString())
+                    lista.add("${document.data}")
 
                 }
                 var datos:Datos=Datos(lista)

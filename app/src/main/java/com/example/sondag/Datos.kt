@@ -10,8 +10,20 @@ class Datos(value: ArrayList<String>){
 
     fun toBringDB() {
 
-        println("desde toBringDB ${valor}")
+        var returnValue:ArrayList<Double>
+        returnValue=dataNumber(valor)
+       println("hola como van jajjaj si funciona "+ returnValue)
 
 
+    }
+
+    private fun dataNumber(lista:ArrayList<String>):ArrayList<Double> {
+
+        var number:ArrayList<Double> = ArrayList()
+
+        for(x in lista) {
+             number.add((x.substringAfter("fecha=")).substringBefore("}").toDouble())
+        }
+            return number
     }
 }

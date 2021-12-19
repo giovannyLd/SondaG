@@ -14,37 +14,25 @@ class MainActivity : AppCompatActivity() {
     var x:Double=0.0
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
     fun goMainActivity(view: android.view.View) {
-
-/*        db.collection("Formulario").document("giovanny").set(
-            hashMapOf("nombre" to "giovanny fandiño motnes "))*/
-        var y=0
-
+/*        var y=0
         for(x in listaPrueba ){
-
             if(x != 0.0) {
-
                 val listaProductos = hashMapOf(
-
-                    "fecha" to x
-
-                )
-
+                    "fecha" to x)
                 var coleccion = db.collection("lista").document()
                     .set(listaProductos)
                     .addOnSuccessListener { println("DocumentSnapshot successfully written!") }
-                    .addOnFailureListener { e -> println("Error writing document" + e) }
-            }
+                    .addOnFailureListener { e -> println("Error writing document" + e) } }
+            y++ }*/
 
-            y++
-        }
-
-        val start = Intent(this,start_activity::class.java)
+        val start = Intent(this,prueba3::class.java)
         startActivity(start)
         Toast.makeText(this,"si funciona bootn",Toast.LENGTH_LONG).show()
     }
