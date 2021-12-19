@@ -24,12 +24,12 @@ class prueba3 : AppCompatActivity() {
 
         var plot:XYPlot =findViewById(R.id.plot)
 
-        val domainLabels = arrayOf<Number>(1,2,3,6,7,8,9,10,13,14)
-        val serial1Number = arrayOf<Number>(1,4,8,12,16,32,26,29,10,13)
+        val domainLabels = arrayOf<Number>(10,20,30,60,70,80,90,10,13,14,15,16,17,18,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,45)
+        val serial1Number = arrayOf<Number>(100,120,120,120,160,100,100,120,100,130,130,120,110,100,120,120,120,120,160,100,100,120,100,130,130,120,110,100,120)
 
-        val series1: XYSeries=SimpleXYSeries(Arrays.asList(* serial1Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series 1")
+        val series1: XYSeries=SimpleXYSeries(Arrays.asList(* serial1Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "prueba giovanny")
 
-        val series1Format = LineAndPointFormatter(Color.BLUE,Color.BLACK,null,null)
+        val series1Format = LineAndPointFormatter(Color.CYAN ,Color.GREEN,Color.CYAN,null)
 
         plot.addSeries(series1,series1Format)
 
@@ -50,4 +50,6 @@ class prueba3 : AppCompatActivity() {
         }
 
     }
+
+    fun toBringBD(view: android.view.View) {}
 }

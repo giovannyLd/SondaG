@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goMainActivity(view: android.view.View) {
-/*        var y=0
+        var y=0
         for(x in listaPrueba ){
             if(x != 0.0) {
                 val listaProductos = hashMapOf(
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                     .set(listaProductos)
                     .addOnSuccessListener { println("DocumentSnapshot successfully written!") }
                     .addOnFailureListener { e -> println("Error writing document" + e) } }
-            y++ }*/
+            y++ }
 
         val start = Intent(this,prueba3::class.java)
         startActivity(start)
