@@ -3,17 +3,24 @@ package com.example.sondag
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 
-class start_activity : AppCompatActivity() {
+class menu_activity : AppCompatActivity() {
 
     var db= FirebaseFirestore.getInstance()
 
-
+    private lateinit var imagenView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_start)
+        setContentView(R.layout.activity_menu)
+
+
+
+
+        println("hola si ingres a start activity")
     }
 
     fun salir(view: android.view.View) {
@@ -26,7 +33,7 @@ class start_activity : AppCompatActivity() {
         var lista: ArrayList<String> = ArrayList()
 
 
-        db.collection("lista").whereGreaterThan("fecha", 2).get()
+        db.collection("giovanny").whereGreaterThan("fecha", 2).get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     println("en la clase Datos: ${document.id} => ${document.data}")

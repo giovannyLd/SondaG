@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "230162589838",
+    "firebase_url": "https://sondagiovanny-default-rtdb.firebaseio.com",
     "project_id": "sondagiovanny",
     "storage_bucket": "sondagiovanny.appspot.com"
   },

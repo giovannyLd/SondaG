@@ -8,9 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="fondo1">#84C271</color>
-    <color name="fondo2">#80E4D785</color>
-    <color name="fondo3">#84C271</color>
+    <color name="fondo1">#887CAF</color>
+    <color name="fondo2">#4F628E</color>
+    <color name="fondo3">#615192</color>
 
     <color name="linea">#C4C6CE</color>
 </resources>
