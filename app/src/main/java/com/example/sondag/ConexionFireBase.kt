@@ -17,6 +17,7 @@ class ConexionFireBase : AppCompatActivity() {
     //private lateinit var binding: ActivityMainBinding
     private lateinit var database: DatabaseReference
     protected var tvDatos: TextView? = null
+    var miObjeto:keyFirebase= keyFirebase()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,22 +38,53 @@ class ConexionFireBase : AppCompatActivity() {
     }
     fun getMensajesFromFirebase() {
 
-        database.child("dc:a6:32:cd:55:ab").get().addOnSuccessListener{
+        var listaKey = mutableListOf<String>()
+        var listaAvg = mutableListOf<String>()
 
-            var amount= ("${it.childrenCount }").toInt()
-            var divide = "${it.value }".split('}')
+            database.child("dc:a6:32:cd:55:ab").get().addOnSuccessListener{
+
+                var divide = "${it.value }".split('}')
+
+                for(y in divide)
+                {
+                    var key= "-"+(y.substringAfter("-").substringBefore("="))
+                    listaKey.add(key)
+                }
+                miObjeto.lista=listaKey
+                tvDatos!!.setText(miObjeto.lista.toString())
+
+            for(keyAvg in miObjeto.lista){
+            database.child("dc:a6:32:cd:55:ab").child(keyAvg).child("avg").get().addOnSuccessListener{
+
+                var avg= "${it.value}"
+
+               listaAvg.add(avg)
+                println(listaAvg)
+            }}
 
 
-        for(y in divide) {
-            var key = y.substringAfter("-").substringBefore("=")
+                }
 
-            println("\n" + key)
+
+
+
         }
-           }
-           // Toast.makeText(this,divide,Toast.LENGTH_LONG).show()
-            //tvDatos!!.setText(divide)
+
+    class keyFirebase(){
+
+        var documento:String=""
+        var lista= mutableListOf<String>()
+
+        fun imprimir(){
+            println("esta imprimiendo desde la funcion imprimir de la case keyFirebase")
+            println(lista)
+        }
+        fun imprimirDato(){
+             var nombre  = "$documento"
+
 
         }
+    }
     }
 ///SI FUNCIONA PERO TRAE TODOS LOS DATOS HASTA LOS SECUNDARIO
 /*    fun getMensajesFromFirebase(){
